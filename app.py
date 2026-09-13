@@ -175,7 +175,7 @@ if 'resultados' in st.session_state and st.session_state['resultados']:
             else:
                 with st.spinner("Analisando referências científicas e gerando o material..."):
                     try:
-                        client = genai.Client(api_key=gemini_api_key)
+                        client = genai.Client(api_key=gemini_api_key.strip())
                         
                         contexto_fontes = "\n\n".join([
                             f"Título: {f['title']}\nPublicação: {f['publication']}\nLink: {f['link']}\nResumo: {f['snippet']}"
